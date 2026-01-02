@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Games</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    font-family:Arial, sans-serif;
+    color:#fff;
+}
+
+/* SECTION */
+.game-section{
+    max-width:1400px;
+    margin:60px auto;
+    padding:0 20px;
+}
+
+/* TITLE */
+.section-title{
+    text-align:center;
+    font-size:32px;
+    color:#ff3333;
+    letter-spacing:3px;
+}
+
+.section-line{
+    width:100px;
+    height:3px;
+    background:#ff3333;
+    margin:10px auto 35px;
+}
+
+/* GRID */
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:22px;
+}
+
+/* CARD */
+.game-card{
+    background:#0c0c0c;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #222;
+    transition:0.3s;
+}
+
+.game-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 14px rgba(255,0,80,0.4);
+    border-color:#ff0055;
+}
+
+/* IMAGE SMALL */
+.game-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+/* INFO */
+.game-info{
+    padding:8px;
+    text-align:center;
+}
+
+.game-info h3{
+    font-size:14px;
+    margin:4px 0;
+}
+
+.game-info span{
+    font-size:12px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+<div id="video-player-section" style="display: none; width: 100%; background: #111; padding: 20px 0; text-align: center;">
+    <div style="max-width: 900px; margin: auto; position: relative;">
+        <button onclick="closeGame()" style="position: absolute; right: -10px; top: -10px; background: red; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px; z-index: 100;">Close X</button>
+        
+        <div id="game-holder">
+            </div>
+        
+        <h2 id="current-game-title" style="color: white; margin-top: 15px; font-family: sans-serif;"></h2>
+    </div>
+    <hr style="border: 0.5px solid #333; margin-top: 30px; width: 80%;">
+</div>
+
+<!-- PUZZLE -->
+<div class="game-section">
+    <div class="section-title">PUZZLE GAMES</div>
+    <div class="section-line"></div>
+
+    <div class="game-grid">
+      <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/47d8f1df35d149d894509585085a9733/', 'Matching Puzzle')">
+    <img src="PHOTO/47d8f1df35d149d894509585085a9733-512x384.jpg">
+    <div class="game-info">
+        <h3>Matching Puzzle</h3>
+        <span>Play</span>
+    </div>
+</div>
+      <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/0a8a63b842d543d692fe61cbd27ebaf2/', 'Cube Drop Puzzle')">
+    <img src="PHOTO/0a8a63b842d543d692fe61cbd27ebaf2-512x512.jpg">
+    <div class="game-info">
+        <h3>Cube Drop Puzzle</h3>
+        <span>Play</span>
+    </div>
+</div>  
+        <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/919c1421052643c8b73a692e9f0a0c28/', 'Gomu Goman')">
+    <img src="PHOTO/919c1421052643c8b73a692e9f0a0c28-512x384.jpg">
+    <div class="game-info">
+        <h3>Gomu Goman</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/28c1437786404660b9482216c7be11b9/', 'Crazy 2248 Link - Matching Puzzle Game')">
+    <img src="PHOTO/28c1437786404660b9482216c7be11b9-512x384.jpg">
+    <div class="game-info">
+        <h3>Crazy 2248 Link - Matching Puzzle Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/5e590e47726b470f805660429a7d8f71/', 'Screw Nuts & Bolts: Wood Solve')">
+    <img src="PHOTO/5e590e47726b470f805660429a7d8f71-512x512.jpg">
+    <div class="game-info">
+        <h3>Screw Nuts & Bolts: Wood Solve</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/9f6f2e630a1d42b6b2144f8544f1f56a/', 'Emoji Sort – Fun Puzzle Game')">
+    <img src="PHOTO/9f6f2e630a1d42b6b2144f8544f1f56a-200x120.jpg">
+    <div class="game-info">
+        <h3>Emoji Sort – Fun Puzzle Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/66888fb5eec54304bc3a5215ccc589ac/', 'Maze Craze')">
+    <img src="PHOTO/66888fb5eec54304bc3a5215ccc589ac-512x384.jpg">
+    <div class="game-info">
+        <h3>Maze Craze</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/3927255869a9455fb80144156875b3ad/', 'Hide and Escape Puzzle Game')">
+    <img src="PHOTO/3927255869a9455fb80144156875b3ad-512x512.jpg">
+    <div class="game-info">
+        <h3>Hide and Escape Puzzle Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/34a0239df1354c09b924706e7bb5305d/', 'Unblock Puzzle')">
+    <img src="PHOTO/34a0239df1354c09b924706e7bb5305d-512x384.jpeg">
+    <div class="game-info">
+        <h3>Unblock Puzzle</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/478e72c4b95e45d5b2cfd5e7fb36ee9e/', 'Sprinkle Plants Puzzle Game')">
+    <img src="PHOTO/478e72c4b95e45d5b2cfd5e7fb36ee9e-512x384.jpeg">
+    <div class="game-info">
+        <h3>Sprinkle Plants Puzzle Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/9cc53fd9cbba4dc8bcb40f72fd9325cf/', 'Save the Daddy')">
+    <img src="PHOTO/9cc53fd9cbba4dc8bcb40f72fd9325cf-512x384.jpg">
+    <div class="game-info">
+        <h3>Save the Daddy</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/5472c20853064b7b866a0d2629f2513d/', 'Snake Puzzle: Slither to Eat!')">
+    <img src="PHOTO/5472c20853064b7b866a0d2629f2513d-512x512.jpg">
+    <div class="game-info">
+        <h3>Snake Puzzle: Slither to Eat!</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/9568a9db824f42229c2be496c362c143/', 'Wood Block Puzzle')">
+    <img src="PHOTO/9568a9db824f42229c2be496c362c143-512x384.jpeg">
+    <div class="game-info">
+        <h3>Wood Block Puzzle</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/e241edba68504d089b864d5988f049b5/', 'Find the Difference: Wednesday Mode')">
+    <img src="PHOTO/e241edba68504d089b864d5988f049b5-512x512.jpeg">
+    <div class="game-info">
+        <h3>Find the Difference: Wednesday Mode</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        
+    </div>
+</div>
+
+<!-- RACING -->
+<div class="game-section">
+    <div class="section-title">RACING GAMES</div>
+    <div class="section-line"></div>
+
+    <div class="game-grid">
+      <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/a328bd1f75004f8b912aa34dc451fb4c/', 'Urus City Driver')">
+    <img src="PHOTO/a328bd1f75004f8b912aa34dc451fb4c-200x120.jpg">
+    <div class="game-info">
+        <h3>Urus City Driver</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/0c89181b9cfe4897afa41b0f94385da9/', 'Crazy Bike Stunts PvP')">
+    <img src="PHOTO/0c89181b9cfe4897afa41b0f94385da9-512x384.jpg">
+    <div class="game-info">
+        <h3>Crazy Bike Stunts PvP</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/2541c94a787f4c58b94636a38c3aa060/', 'Epic Racing - Descent on Cars')">
+    <img src="PHOTO/2541c94a787f4c58b94636a38c3aa060-512x384.jpg">
+    <div class="game-info">
+        <h3>Epic Racing - Descent on Cars</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/d132f5f8eab94506828f58ef0c5b1e29/', 'Racing Game King HP')">
+    <img src="PHOTO/d132f5f8eab94506828f58ef0c5b1e29-512x512.jpg">
+    <div class="game-info">
+        <h3>Racing Game King HP</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/f597ef614f4f42768bf4f566d76021bc/', 'Formula Racing Games Car Game')">
+    <img src="PHOTO/f597ef614f4f42768bf4f566d76021bc-200x120.jpg">
+    <div class="game-info">
+        <h3>Formula Racing Games Car Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/04fcd52a3d754e0a9136c431298cb7a7/', 'Rally Champion Advanced')">
+    <img src="PHOTO/04fcd52a3d754e0a9136c431298cb7a7-512x512.jpeg">
+    <div class="game-info">
+        <h3>Rally Champion Advanced</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/286bddc6a4ae47e19f4f38175b888b58/', 'Bike Stunt Racing Game 2021')">
+    <img src="PHOTO/286bddc6a4ae47e19f4f38175b888b58-512x384.jpeg">
+    <div class="game-info">
+        <h3>Bike Stunt Racing Game 2021</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/1cfb442071ff48c590ef9c7fe5ff6790/', 'Real Impossible Sky Tracks Car Driving')">
+    <img src="PHOTO/1cfb442071ff48c590ef9c7fe5ff6790-512x384.jpg">
+    <div class="game-info">
+        <h3>Real Impossible Sky Tracks Car Driving</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/d0b8e5ba257d4f888738a7ec722443f1/', 'Crazy Traffic Racer')">
+    <img src="PHOTO/d0b8e5ba257d4f888738a7ec722443f1-512x384.jpg">
+    <div class="game-info">
+        <h3>Crazy Traffic Racer</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/8554cb6e41144dae8c721cdc7dabf498/', 'Impossible Bike Race: Racing Games 3D 2019')">
+    <img src="PHOTO/8554cb6e41144dae8c721cdc7dabf498-512x512.jpeg">
+    <div class="game-info">
+        <h3>Impossible Bike Race: Racing Games 3D 2019</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/1b5315fd207a446daf4cbf9df971e5b0/', 'Chiron City Driver')">
+    <img src="PHOTO/1b5315fd207a446daf4cbf9df971e5b0-512x512.jpg">
+    <div class="game-info">
+        <h3>Chiron City Driver</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/68d20e6063f343b4ac3035830f0e7b38/', 'Real Car Demolition Derby Racing Game')">
+    <img src="PHOTO/68d20e6063f343b4ac3035830f0e7b38-512x384.jpeg">
+    <div class="game-info">
+        <h3>Real Car Demolition Derby Racing Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/d632553ef7264d99aa438310073a6dc3/', 'NSR Street Car Racing')">
+    <img src="PHOTO/d632553ef7264d99aa438310073a6dc3-512x512.jpg">
+    <div class="game-info">
+        <h3>NSR Street Car Racing</h3>
+        <span>Play</span>
+    </div>
+</div> 
+      <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/7a1488d7af3e49c4b8be05cf86ae135e/', 'Xtreme Boat Racing Game')">
+    <img src="PHOTO/7a1488d7af3e49c4b8be05cf86ae135e-512x384.jpeg">
+    <div class="game-info">
+        <h3>Xtreme Boat Racing Game</h3>
+        <span>Play</span>
+    </div>
+</div> 
+
+    </div>
+</div>
+
+<!-- ACTION -->
+<div class="game-section">
+    <div class="section-title">ACTION GAMES</div>
+    <div class="section-line"></div>
+
+    <div class="game-grid">
+      <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/d1dde7ae11fa4cf7a6c08126c9118f09/', 'Red Stickman vs Monster School')">
+    <img src="PHOTO/d1dde7ae11fa4cf7a6c08126c9118f09-512x384.jpg">
+    <div class="game-info">
+        <h3>Red Stickman vs Monster School</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/6bfd6b77827c418eb5dc2d33be6bc911/', 'NinjaRoof')">
+    <img src="PHOTO/6bfd6b77827c418eb5dc2d33be6bc911-200x120.jpg">
+    <div class="game-info">
+        <h3>NinjaRoof</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/c743d2205548425eb70d6f3d71433518/', 'Stickman Weapon Master')">
+    <img src="PHOTO/c743d2205548425eb70d6f3d71433518-200x120.jpg">
+    <div class="game-info">
+        <h3>Stickman Weapon Master</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/8e2b594a7e3d4840bcf77441b9dd207b/', 'Noob archer vs Stickman Zombie: zombie shooter')">
+    <img src="PHOTO/8e2b594a7e3d4840bcf77441b9dd207b-512x384.jpg">
+    <div class="game-info">
+        <h3>Noob archer vs Stickman Zombie: zombie shooter</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/61e8556801d641cabda403432f8cef18/', 'Deads On The Road')">
+    <img src="PHOTO/61e8556801d641cabda403432f8cef18-512x384.jpeg">
+    <div class="game-info">
+        <h3>Deads On The Road</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/8cc62e5427cf443dab15634e5dfe7937/', 'Warfare 1942 - online shooter')">
+    <img src="PHOTO/8cc62e5427cf443dab15634e5dfe7937-200x120.jpg">
+    <div class="game-info">
+        <h3>Warfare 1942 - online shooter</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/c5e6a947c3bc40b6b4cfb3aca60de555/', 'Pixel Force')">
+    <img src="PHOTO/c5e6a947c3bc40b6b4cfb3aca60de555-512x384.jpeg">
+    <div class="game-info">
+        <h3>Pixel Force</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/5a1779d9068445689598a76b6412bde3/', 'Gladiator Fights')">
+    <img src="PHOTO/5a1779d9068445689598a76b6412bde3-1280x550.jpg">
+    <div class="game-info">
+        <h3>Gladiator Fights</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/c7e7d04c0c5e40f4a41c7c7fdb54d38e/', 'Parkour GO')">
+    <img src="PHOTO/c7e7d04c0c5e40f4a41c7c7fdb54d38e-512x384.jpeg">
+    <div class="game-info">
+        <h3>Parkour GO</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/642dfd66d764496ab2102d688c63ef36/', 'Sniper Elite 3D')">
+    <img src="PHOTO/642dfd66d764496ab2102d688c63ef36-512x384.jpg">
+    <div class="game-info">
+        <h3>Sniper Elite 3D</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/9f9037619d1b4024b9b860dfcc3b86be/', 'Drive To Survive')">
+    <img src="PHOTO/9f9037619d1b4024b9b860dfcc3b86be-512x384.jpg">
+    <div class="game-info">
+        <h3>Drive To Survive</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/f29a502f781449489e9771112f61d907/', 'CS War Gun King FPS')">
+    <img src="PHOTO/f29a502f781449489e9771112f61d907-512x384.jpeg">
+    <div class="game-info">
+        <h3>CS War Gun King FPS</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/52cb08b85b4f4e53a94b15a72ca7b1bc/', 'Squid Game Original')">
+    <img src="PHOTO/52cb08b85b4f4e53a94b15a72ca7b1bc-512x512.jpg">
+    <div class="game-info">
+        <h3>Squid Game Original</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/9ae3b7ab17844c9faa5491ac03a63fe6/', 'Samurai vs Yakuza - Beat Em Up')">
+    <img src="PHOTO/9ae3b7ab17844c9faa5491ac03a63fe6-512x384.jpg">
+    <div class="game-info">
+        <h3>Samurai vs Yakuza - Beat Em Up</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        
+    </div>
+</div>
+
+<!-- ADVENTURE -->
+<div class="game-section">
+    <div class="section-title">ADVENTURE GAMES</div>
+    <div class="section-line"></div>
+
+    <div class="game-grid">
+      <div class="game-card" onclick="openGame('https://html5.gamedistribution.com/99423a2819a14804a12f30557091d567/', 'Geometry Vibes X-Arrow')">
+    <img src="PHOTO/99423a2819a14804a12f30557091d567-512x384.jpg">
+    <div class="game-info">
+        <h3>Geometry Vibes X-Arrow</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/ac7c68ff82a9413197db6b99a8452c10/', 'Frost Defense')">
+    <img src="PHOTO/ac7c68ff82a9413197db6b99a8452c10-512x384.jpg">
+    <div class="game-info">
+        <h3>Frost Defense</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/9190c99d4aae4e0085a6059478ee3520/', 'Plant Merge: Zombie War')">
+    <img src="PHOTO/9190c99d4aae4e0085a6059478ee3520-512x384.jpg">
+    <div class="game-info">
+        <h3>Plant Merge: Zombie War</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/fa7ff4503743437681835a0a4ad62c7e/', 'Crowd Evolution!')">
+    <img src="PHOTO/fa7ff4503743437681835a0a4ad62c7e-512x384.jpg">
+    <div class="game-info">
+        <h3>Crowd Evolution!</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/67b7fb2c6f594ef3a4fcb241e902ce1d/', 'Rescue Sharp Turn')">
+    <img src="PHOTO/67b7fb2c6f594ef3a4fcb241e902ce1d-512x384.jpg">
+    <div class="game-info">
+        <h3>Rescue Sharp Turn</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/048f19bd125e46e2a2312fadcde3d518/', 'Knock and Run. 100 Doors Escape')">
+    <img src="PHOTO/048f19bd125e46e2a2312fadcde3d518-200x120.jpg">
+    <div class="game-info">
+        <h3>Knock and Run. 100 Doors Escape</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/f9efa6a562ca44dfb5cf4558309beba7/', 'Super Tank Wrestle')">
+    <img src="PHOTO/f9efa6a562ca44dfb5cf4558309beba7-512x384.jpg">
+    <div class="game-info">
+        <h3>Super Tank Wrestle</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/516d6908fbc848bdb89e65a58a43a7dc/', 'Basketball Stars 2026')">
+    <img src="PHOTO/516d6908fbc848bdb89e65a58a43a7dc-512x384.jpg">
+    <div class="game-info">
+        <h3>Basketball Stars 2026</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/8d958e45c13a46c38e62805648e7d801/ ', 'My Garden Journey')">
+    <img src="PHOTO/8d958e45c13a46c38e62805648e7d801-512x512.jpg">
+    <div class="game-info">
+        <h3>My Garden Journey</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/6b91889aa08e40ffbc1c09be1a8e81ce/', 'Dig out of Prison')">
+    <img src="PHOTO/6b91889aa08e40ffbc1c09be1a8e81ce-512x384.jpg">
+    <div class="game-info">
+        <h3>Dig out of Prison</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/a930dd4779394614ba4c0b0d8275e252/', 'Brainrot Mob Clash 3D')">
+    <img src="PHOTO/a930dd4779394614ba4c0b0d8275e252-512x384.jpg">
+    <div class="game-info">
+        <h3>Brainrot Mob Clash 3D</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/fc84a63fc1db4ebabc334521c2cb3c68/', 'Bubble Pop Fairyland')">
+    <img src="PHOTO/fc84a63fc1db4ebabc334521c2cb3c68-512x384.jpg">
+    <div class="game-info">
+        <h3>Bubble Pop Fairyland</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/5cdec698c5ce4e66af14ea5b3968ef08/', 'Pinball VS Zombie')">
+    <img src="PHOTO/5cdec698c5ce4e66af14ea5b3968ef08-512x384.jpg">
+    <div class="game-info">
+        <h3>Pinball VS Zombie</h3>
+        <span>Play</span>
+    </div>
+</div> 
+<div class="game-card" onclick="openGame('https://html5.gamedistribution.com/f4055ea8c0794a50badf82d7ce837eaa/', 'Archers Random')">
+    <img src="PHOTO/f4055ea8c0794a50badf82d7ce837eaa-512x384.jpg">
+    <div class="game-info">
+        <h3>Archers Random</h3>
+        <span>Play</span>
+    </div>
+</div> 
+        
+    </div>
+</div>
+<script>
+function openGame(gameUrl, gameName) {
+    const playerSection = document.getElementById('video-player-section');
+    const gameHolder = document.getElementById('game-holder');
+    const title = document.getElementById('current-game-title');
+
+    // 1. Iframe set karna (Rectangular Shape)
+    gameHolder.innerHTML = `<iframe src="${gameUrl}" width="100%" height="500px" sandbox="allow-scripts allow-same-origin allow=forms" style="border: 3px solid #ff4500; border-radius: 10px; box-shadow: 0px 0px 20px rgba(255,69,0,0.5);" frameborder="0" allowfullscreen></iframe>`;
+    
+    // 2. Game ka naam set karna
+    title.innerText = "Playing: " + gameName;
+
+    // 3. Section ko show karna
+    playerSection.style.display = 'block';
+
+    // 4. Page ko scroll karke sabse upar le jana
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function closeGame() {
+    document.getElementById('video-player-section').style.display = 'none';
+    document.getElementById('game-holder').innerHTML = ''; // Game stop karne ke liye
+}
+</script>
+</body>
+</html>
